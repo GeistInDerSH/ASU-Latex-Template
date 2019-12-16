@@ -1,0 +1,49 @@
+\RequirePackage[l2tabu,orthodox]{nag}
+
+% Only use the front page when printing
+% \documentclass[headsepline,footsepline,footinclude=false,fontsize=11pt,paper=a4,listof=totoc,bibliography=totoc,BCOR=12mm,DIV=12]{scrbook}
+
+% Use front and back of page when printing
+\documentclass[headsepline,footsepline,footinclude=false,oneside,fontsize=11pt,paper=a4,listof=totoc,bibliography=totoc]{scrbook}
+
+\input{settings}
+
+\newcommand*{\getUniversity}{Arizona State University}
+\newcommand*{\getFaculty}{Department of \_\_\_\_\_}
+\newcommand*{\getTitle}{Lab Report Name}
+\newcommand*{\getAuthor}{Authors}
+\newcommand*{\getLabGroup}{Lab Group \#\_\_}
+\newcommand*{\getDoctype}{Lab Report \#\_\_}
+\newcommand*{\getProfessor}{Professor Name}
+\newcommand*{\getAdvisor}{Advisor}
+\newcommand*{\getSubmissionDate}{\DTMtoday}
+\newcommand*{\getSubmissionLocation}{Tempe}
+
+\begin{document}
+    \DTMsetdatestyle{iso}
+    \pagenumbering{alph}
+    \input{pages/cover}
+
+    \frontmatter{}
+
+    \input{pages/title}
+    \input{pages/disclaimer}
+    %\input{pages/acknowledgements}
+    %\input{pages/abstract}
+
+    \microtypesetup{protrusion=false}
+    \tableofcontents{}
+    \microtypesetup{protrusion=true}
+    \mainmatter{}
+
+    \input{chapters/01_chapter.tex}
+
+    \appendix{}
+
+    \microtypesetup{protrusion=false}
+    \listoffigures{}
+    \listoftables{}
+    \microtypesetup{protrusion=true}
+    \printbibliography{}
+
+\end{document}

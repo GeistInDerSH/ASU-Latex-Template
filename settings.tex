@@ -1,0 +1,72 @@
+\PassOptionsToPackage{table,svgnames,dvipsnames}{xcolor}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[sc]{mathpazo}
+\usepackage[american]{babel}
+\usepackage[autostyle]{csquotes}
+\usepackage[%
+  backend=biber,
+  url=false,
+  style=alphabetic,
+  maxnames=4,
+  minnames=3,
+  maxbibnames=99,
+  giveninits,
+  uniquename=init]{biblatex}
+\usepackage{graphicx}
+\usepackage{scrhack}
+\usepackage{listings}
+\usepackage{lstautogobble}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepackage{booktabs}
+\usepackage[final]{microtype}
+\usepackage{caption}
+\usepackage[hidelinks]{hyperref}
+\usepackage{makecell}
+\usepackage[english]{datetime2}
+\usepackage{indentfirst}
+\setlength{\parindent}{1cm}
+
+\bibliography{bibliography}
+
+\setkomafont{disposition}{\normalfont\bfseries}
+\linespread{1.05}
+
+% Add table of contents to PDF bookmarks
+\BeforeTOCHead[toc]{{\cleardoublepage\pdfbookmark[0]{\contentsname}{toc}}}
+
+% Primary Colors for ASU
+% From https://brandguide.asu.edu/Elements-of-the-brand/Color-palette
+% Over many years ASU has developed a sense of tradition and equity in our core colors of maroon and gold. These two colors define who we are as an educational institution.
+\definecolor{ASUMaroon}{HTML}{8C1D40}
+\definecolor{ASUGold}{HTML}{FFC627}
+\definecolor{ASUBlack}{HTML}{000000}
+\definecolor{ASUWhite}{HTML}{FFFFFF}
+
+% Secondary colors for ASU
+% From https://brandguide.asu.edu/Elements-of-the-brand/Color-palette
+% Use of these colors should be done sparingly and with the intent of complementing the core color palette. When more color is desired, pure bright colors feel clear and direct.
+\definecolor{ASUGreen}{HTML}{78BE20}
+\definecolor{ASUBlue}{HTML}{00A3E0}
+\definecolor{ASUOrange}{HTML}{FF7F32}
+\definecolor{ASUGray}{HTML}{5C6670}
+
+
+% Settings for pgfplots
+\pgfplotsset{compat=newest}
+\pgfplotsset{
+  % For available color names, see http://www.latextemplates.com/svgnames-colors
+  cycle list={ASUMaroon\\ASUGold\\},
+}
+
+% Settings for lstlistings
+\lstset{%
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  autogobble,
+  keywordstyle=\bfseries\color{ASUMaroon},
+  stringstyle=\color{ASUGold}
+}

@@ -1,0 +1,31 @@
+\begin{titlepage}
+  \centering
+
+  \IfFileExists{logos/ASU-Logo.png}{%
+    \includegraphics[width=6cm, height=40mm]{logos/ASU-Logo.png}
+  }{%
+    \vspace*{20mm}
+  }
+
+  \vspace{5mm}
+  {\huge\MakeUppercase{\getFaculty{}}}\\
+
+  \vspace{5mm}
+  {\large\MakeUppercase{\getUniversity{}}}\\
+
+  \vspace{20mm}
+  {\Large \getDoctype{}}
+
+  \vspace{15mm}
+  {\huge\bfseries \getTitle{}}
+
+
+  \vspace{15mm}
+  \begin{tabular}{l l}
+    Author:          & \getAuthor{} \\
+    Group:           & \getLabGroup{} \\
+    Professor:       & \getProfessor{} \\
+    Lab TA:          & \getAdvisor{} \\
+    Submission Date: & \getSubmissionDate{} \\
+  \end{tabular}
+\end{titlepage}
